@@ -1,0 +1,230 @@
+<div class="container" imageScr="src\image\background-edit-tour.jpg">
+  <body class="card-header">
+    <h1>Update Tour</h1>
+  </body>
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input
+        formControlName="id"
+        id="id"
+        type="text"
+        [(ngModel)]="tour.id"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="departureDate">Departure Date:</label>
+      <input
+        formControlName="departureDate"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.departureDate"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="dateOfReturn">Date Of Return:</label>
+      <input
+        formControlName="dateOfReturn"
+        id="dateOfReturn"
+        type="text"
+        [(ngModel)]="tour.dateOfReturn"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="numberOfDays">Number Of Days:</label>
+      <input
+        formControlName="numberOfDays"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.numberOfDays"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="priceAdult">Price Adult:</label>
+      <input
+        formControlName="priceAdult"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.priceAdult"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="priceChildren">Price Children:</label>
+      <input
+        formControlName="priceChildren"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.priceChildren"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="promoted">Promoted:</label>
+      <input
+        formControlName="promoted"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.promoted"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="numberSeatAdult">Number Seat Adult:</label>
+      <input
+        formControlName="numberSeatAdult"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.numberSeatAdult"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="numberSeatChildren">Number Seat Children:</label>
+      <input
+        formControlName="numberSeatChildren"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.numberSeatChildren"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="departureCity">Departure City </label>
+      <input
+        formControlName="departureCity"
+        id="departureDate"
+        type="text"
+        [(ngModel)]="tour.departureCity.name"
+        class="form-control"
+      />
+      <select
+        formControlName="departureCity"
+        class="form-control"
+        id="departureCity"
+        placeholder
+        aria-describedby="departureCity"
+      >
+        <option>--Select Arrival City--</option>
+        <option *ngFor="let city of cities" [ngValue]="city">
+          {{ city.name }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="arrivalCity">Arrival City </label>
+      <input
+        formControlName="arrivalCity"
+        id="arrivalCity"
+        type="text"
+        [(ngModel)]="tour.arrivalCity.name"
+        class="form-control"
+      />
+      <select
+      formControlName="arrivalCity"
+      class="form-control"
+      id="arrivalCity"
+      placeholder
+      aria-describedby="arrivalCity"
+    >
+      <option>--Select Arrival City--</option>
+      <option *ngFor="let city of cities" [ngValue]="city">
+        {{ city.name }}
+      </option>
+    </select>
+    </div>
+
+    <div class="form-group">
+      <label for="departureAirport">Departure Airport </label>
+      <input
+        formControlName="departureAirport"
+        id="departureAirport"
+        type="text"
+        [(ngModel)]="tour.departureAirport.name"
+        class="form-control"
+      />
+      <select
+      formControlName="departureAirport"
+      class="form-control"
+      id="departureAirport"
+      placeholder
+      aria-describedby="departureAirport"
+    >
+      <option>--Select Departure Airport--</option>
+      <option *ngFor="let airport of airports" [ngValue]="airport">
+        {{ airport.name }}
+      </option>
+    </select>
+    </div>
+
+    <div class="form-group">
+      <label for="arrivalAirport">Arrival Airport </label>
+      <input
+        formControlName="arrivalAirport"
+        id="arrivalAirport"
+        type="text"
+        [(ngModel)]="tour.arrivalAirport.name"
+        class="form-control"
+      />
+      <select
+      formControlName="arrivalAirport"
+      class="form-control"
+      id="arrivalAirport"
+      placeholder
+      aria-describedby="arrivalAirport"
+    >
+      <option>--Select Arrival Airport--</option>
+      <option *ngFor="let airport of airports" [ngValue]="airport">
+        {{ airport.name }}
+      </option>
+    </select>
+    </div>
+
+    <div class="form-group">
+      <label for="hotel"> Hotel </label>
+      <input
+        formControlName="hotel"
+        id="hotel"
+        type="text"
+        [(ngModel)]="tour.hotel.name"
+        class="form-control"
+      />
+      <select
+      formControlName="hotel"
+      class="form-control"
+      id="hotel"
+      placeholder
+      aria-describedby="hotel"
+    >
+      <option>--Select Hotel--</option>
+      <option *ngFor="let hotel of hotels" [ngValue]="hotel">
+        {{ hotel.name }}
+      </option>
+    </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit" href="/tours">
+      Update
+    </button>
+    <button href="#" routerLink="/tours" class="btn btn-primary">Back</button>
+  </form>
+</div>
+
+
+
